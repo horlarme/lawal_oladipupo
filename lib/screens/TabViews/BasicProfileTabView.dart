@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lawal_oladipupo/widgets/CustomCircularLoading.dart';
+import 'package:lawal_oladipupo/widgets/ProfileRow.dart';
 
 class BasicProfileTabView extends StatefulWidget {
   @override
@@ -10,16 +11,23 @@ class _BasicProfileTabView extends State<BasicProfileTabView> {
   bool _loading = true;
 
   List<Widget> _data = [
-    Text("This is the first"),
-    Text("This is the first"),
-    Text("This is the first"),
-    Text("This is the first"),
-    Text("This is the first"),
-    Text("This is the first"),
-    Text("This is the first"),
-    Text("This is the first"),
-    Text("This is the first"),
-    Text("This is the first"),
+    Padding(
+      padding: EdgeInsets.all(20),
+      child: ClipOval(
+          child: Image.asset(
+            'assets/images/lawal.jpeg',
+            width: 220,
+            height: 220,
+            fit: BoxFit.cover,
+          )),
+    ),
+    ProfileRow("Full Name", "Lawal Oladipupo"),
+    ProfileRow("Gender", "Male"),
+    ProfileRow("Spoken Languages", "English & Yoruba"),
+    ProfileRow("Date of Birth", "January 22, 1996"),
+    ProfileRow("Continent", "Africa"),
+    ProfileRow("Nationality", "Nigeria"),
+    ProfileRow("State of Origin", "Oyo State"),
   ];
 
   @override
@@ -36,12 +44,12 @@ class _BasicProfileTabView extends State<BasicProfileTabView> {
     } else {
       return ListView.builder(
           shrinkWrap: true,
-          padding: const EdgeInsets.all(15),
+          padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 0),
           itemCount: _data.length,
           itemBuilder: (BuildContext context, int index) {
-            if (index.isOdd) return Divider();
-
-            return _data[index];
+            return Column(
+              children: <Widget>[_data[index], new Divider()],
+            );
           });
     }
   }
