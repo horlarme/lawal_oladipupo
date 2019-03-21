@@ -10,13 +10,13 @@ class _EducationTabView extends State<EducationTabView> {
   List<Widget> _data = [
     EducationListItem(
       school: "Ansarudeen Comprehensive High School",
-      certification: "Senior Secondary School Certificate (SSCE)",
+      certification: "Senior Secondary Certificate (SSCE)",
       department: "Art",
       duration: "2010 - 2013",
     ),
     EducationListItem(
       school: "Anglican Grammar School",
-      certification: "Junior Secondary School Certificate (JSCE)",
+      certification: "Junior Secondary Certificate (JSCE)",
       department: "NOT APPLICABLE",
       duration: "2007 - 2010",
     ),
