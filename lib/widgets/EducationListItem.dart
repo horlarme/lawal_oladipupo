@@ -3,6 +3,19 @@ import 'package:flutter/widgets.dart';
 import '../config/Colors.dart';
 
 class EducationListItem extends StatelessWidget {
+  final String school;
+  final String duration;
+  final String certification;
+  final String department;
+
+  const EducationListItem(
+      {Key key,
+      this.school,
+      this.duration,
+      this.certification,
+      this.department})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return new Column(
@@ -12,7 +25,7 @@ class EducationListItem extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(top: 15, left: 15, bottom: 0, right: 15),
           child: Text(
-            "Ansarudeen Comprehensive High School",
+            school,
             style: TextStyle(
                 fontSize: 15, color: ascentColor, fontWeight: FontWeight.bold),
           ),
@@ -29,7 +42,7 @@ class EducationListItem extends StatelessWidget {
                           "Duration".toUpperCase(),
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
-                        Text("2010 - 2013")
+                        Text(duration)
                       ])),
               Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
@@ -40,7 +53,7 @@ class EducationListItem extends StatelessWidget {
                           "Certification".toUpperCase(),
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
-                        Text("Senior Secondary School Certificate (SSCE)")
+                        Text(certification)
                       ])),
               Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
@@ -51,7 +64,7 @@ class EducationListItem extends StatelessWidget {
                           "Department".toUpperCase(),
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
-                        Text("Arts")
+                        Text(department)
                       ]))
             ]))
       ],

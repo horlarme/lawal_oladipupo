@@ -8,10 +8,30 @@ class EducationTabView extends StatefulWidget {
 
 class _EducationTabView extends State<EducationTabView> {
   List<Widget> _data = [
-    EducationListItem(),
-    EducationListItem(),
-    EducationListItem(),
-    EducationListItem(),
+    EducationListItem(
+      school: "Ansarudeen Comprehensive High School",
+      certification: "Senior Secondary School Certificate (SSCE)",
+      department: "Art",
+      duration: "2010 - 2013",
+    ),
+    EducationListItem(
+      school: "Anglican Grammar School",
+      certification: "Junior Secondary School Certificate (JSCE)",
+      department: "NOT APPLICABLE",
+      duration: "2007 - 2010",
+    ),
+    EducationListItem(
+      school: "Saint James Anglican Primary School",
+      certification: "First School Leaving Certificate (FSLC)",
+      department: "NOT APPLICABLE",
+      duration: "2006 - 2007",
+    ),
+    EducationListItem(
+      school: "Seventh-Day Adventise Primary School",
+      certification: "NOT APPLICABLE",
+      department: "NOT APPLICABLE",
+      duration: "2000 - 2006",
+    ),
   ];
 
   @override
