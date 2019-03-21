@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lawal_oladipupo/widgets/CustomCircularLoading.dart';
+import '../../widgets/EducationListItem.dart';
 
 class EducationTabView extends StatefulWidget {
   @override
@@ -7,7 +7,12 @@ class EducationTabView extends StatefulWidget {
 }
 
 class _EducationTabView extends State<EducationTabView> {
-  bool loading = true;
+  List<Widget> _data = [
+    EducationListItem(),
+    EducationListItem(),
+    EducationListItem(),
+    EducationListItem(),
+  ];
 
   @override
   void initState() {
@@ -16,10 +21,14 @@ class _EducationTabView extends State<EducationTabView> {
 
   @override
   Widget build(BuildContext context) {
-    if (loading == true) {
-      return CustomCircularLoading(text: 'Education');
-    } else {
-      return null;
-    }
+    return ListView.builder(
+        shrinkWrap: true,
+        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 0),
+        itemCount: _data.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Column(
+            children: <Widget>[_data[index], new Divider()],
+          );
+        });
   }
 }
