@@ -2,6 +2,7 @@ import "package:flutter/widgets.dart";
 import "package:flutter/material.dart";
 import 'package:lawal_oladipupo/screens/TabViews/BasicProfileTabView.dart';
 import 'package:lawal_oladipupo/screens/TabViews/EducationTabView.dart';
+import 'package:lawal_oladipupo/screens/TabViews/SkillsTabView.dart';
 
 class FirstPage extends StatefulWidget {
   @override
@@ -11,7 +12,8 @@ class FirstPage extends StatefulWidget {
 List<Tab> tabList = [
   Tab(text: "Basic"),
   Tab(text: "Education"),
-  Tab(text: "Skill Sets"),
+  Tab(text: "Skills"),
+  Tab(text: "Story"),
   Tab(text: "Photos"),
   Tab(text: "Quotes"),
 ];
@@ -19,6 +21,7 @@ List<Tab> tabList = [
 List<Widget> tabViews = [
   BasicProfileTabView(),
   EducationTabView(),
+  SkillsTabView(),
   BasicProfileTabView(),
   BasicProfileTabView(),
   BasicProfileTabView(),
