@@ -12,8 +12,7 @@ class FirstPage extends StatefulWidget {
 List<Tab> tabList = [
   Tab(text: "Basic"),
   Tab(text: "Education"),
-  Tab(text: "Skills"),
-  Tab(text: "Story"),
+  Tab(text: "Tech Stack"),
   Tab(text: "Photos"),
   Tab(text: "Quotes"),
 ];
@@ -22,7 +21,6 @@ List<Widget> tabViews = [
   BasicProfileTabView(),
   EducationTabView(),
   SkillsTabView(),
-  BasicProfileTabView(),
   BasicProfileTabView(),
   BasicProfileTabView(),
 ];
