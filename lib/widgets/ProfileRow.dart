@@ -11,10 +11,10 @@ class ProfileRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         Padding(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.only(top: 10, left: 15, right: 15,bottom: 10),
             child: Text(label,
                 textAlign: TextAlign.start,
                 style: TextStyle(
@@ -24,7 +24,7 @@ class ProfileRow extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ))),
         Padding(
-            padding: EdgeInsets.all(5),
+            padding: EdgeInsets.only(top: 0, left: 15, right: 15,bottom: 0),
             child: Text(value,
                 textAlign: TextAlign.start,
                 style: TextStyle(
