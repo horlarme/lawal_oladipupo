@@ -1,5 +1,6 @@
-import "package:flutter/widgets.dart";
 import "package:flutter/material.dart";
+import "package:flutter/widgets.dart";
+import 'package:lawal_oladipupo/helpers/user.dart';
 import 'package:lawal_oladipupo/screens/TabViews/BasicProfileTabView.dart';
 import 'package:lawal_oladipupo/screens/TabViews/EducationTabView.dart';
 import 'package:lawal_oladipupo/screens/TabViews/SkillsTabView.dart';
@@ -32,7 +33,7 @@ class _FirstPage extends State<FirstPage> with SingleTickerProviderStateMixin {
   List<Widget> tabViews() => [
         BasicProfileTabView(user: widget.data),
         EducationTabView(user: widget.data),
-        SkillsTabView(user: widget.data,)
+        SkillsTabView(user: widget.data)
       ];
 
   @override
@@ -40,7 +41,7 @@ class _FirstPage extends State<FirstPage> with SingleTickerProviderStateMixin {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(144, 123, 73, 1),
-        title: Text(widget.data['first_name'] + widget.data['last_name']),
+        title: Text(getFullName(widget.data)),
         bottom: TabBar(
           tabs: tabList,
           indicatorColor: Colors.white,
@@ -56,7 +57,7 @@ class _FirstPage extends State<FirstPage> with SingleTickerProviderStateMixin {
         onPressed: _goToContactPage,
         child: Icon(Icons.contact_mail),
         backgroundColor: Color.fromRGBO(144, 123, 73, 1),
-        tooltip: "Contact " + widget.data['first_name'],
+        tooltip: "Contact " + getFullName(widget.data),
       ),
     );
   }
