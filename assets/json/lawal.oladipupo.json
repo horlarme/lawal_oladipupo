@@ -1,0 +1,86 @@
+{
+  "first_name": "Oladipupo",
+  "last_name": "Lawal",
+  "date_of_birth": {
+    "day": "22",
+    "month": "01",
+    "year": "1996"
+  },
+  "summary": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with recently with desktop publishing software like Aldus PageMaker including",
+  "languages": [
+    "English",
+    "Yoruba"
+  ],
+  "continent": "Africa",
+  "country": "nigeria",
+  "state": "oyo",
+  "mobile": "+2348149108989",
+  "education": [
+    {
+      "school": "Ansarudeen Comprehensive High School",
+      "duration": [
+        "2010",
+        "2013"
+      ],
+      "other": "department",
+      "certification": "Senior Secondary Certificate (SSCE)",
+      "department": "art"
+    },
+    {
+      "school": "Anglican Grammar School",
+      "duration": [
+        "2007",
+        "2010"
+      ],
+      "other": "department",
+      "certification": "Junior Secondary Certificate (JSCE)",
+      "department": "NOT APPLICABLE"
+    },
+    {
+      "school": "Saint James Anglican Primary School",
+      "duration": [
+        "2006",
+        "2007"
+      ],
+      "other": "department",
+      "certification": "First School Leaving Certificate (FSLC)",
+      "department": "NOT APPLICABLE"
+    },
+    {
+      "school": "Seventh-Day Adventise Primary School",
+      "duration": [
+        "2000",
+        "2006"
+      ],
+      "other": "department",
+      "certification": "NOT APPLICABLE",
+      "department": "NOT APPLICABLE"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Javascript",
+      "color": "#456729",
+      "level": 0.6,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+      "name": "PHP",
+      "color": "#456729",
+      "level": 0.6,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+      "name": "Flutter",
+      "color": "#456729",
+      "level": 0.6,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+      "name": "ReactJS",
+      "color": "#456729",
+      "level": 0.6,
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    }
+  ]
+}

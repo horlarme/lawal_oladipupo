@@ -66,3 +66,4 @@ flutter:
 
   assets:
       - assets/images/
+      - assets/json/lawal.oladipupo.json

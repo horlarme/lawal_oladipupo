@@ -1,8 +1,9 @@
-import 'package:flutter/widgets.dart';
-import 'package:flutter/material.dart';
+import 'dart:convert';
+
 import 'package:countdown/countdown.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:lawal_oladipupo/screens/firstPage.dart';
-import 'package:lawal_oladipupo/widgets/button.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -10,6 +11,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  var profile;
 
   @override
   void initState() {
@@ -18,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
     _startCountDown();
   }
 
-  Duration waitTime = Duration(seconds: 5);
+  Duration waitTime = Duration(seconds: 2);
 
   int remainingSec;
 
@@ -27,8 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(144, 123, 73, 1),
       body: Center(
-        child: Column(
-            mainAxisSize: MainAxisSize.max, children: <Widget>[
+        child: Column(mainAxisSize: MainAxisSize.max, children: <Widget>[
           new Flexible(
             flex: 7,
             child: new Center(
@@ -39,11 +40,11 @@ class _SplashScreenState extends State<SplashScreen> {
                   children: <Widget>[
                     ClipOval(
                         child: Image.asset(
-                          'assets/images/lawal.jpeg',
-                          width: 220,
-                          height: 220,
-                          fit: BoxFit.cover,
-                        )),
+                      'assets/images/lawal.jpeg',
+                      width: 220,
+                      height: 220,
+                      fit: BoxFit.cover,
+                    )),
                     Padding(
                       padding: EdgeInsets.only(top: 25),
                       child: Text(
@@ -68,15 +69,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     ),
                   ]),
             ),
-          ),
-          new Flexible(
-              flex: 1,
-              child: Padding(
-                padding: EdgeInsets.all(10),
-                child: Button("Read Profile", onPressed: () {
-                  this._goToFirstPage();
-                }),
-              ))
+          )
         ]),
       ),
     );
@@ -85,7 +78,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void _goToFirstPage() {
     Navigator.pushReplacement(context, MaterialPageRoute<void>(
       builder: (BuildContext context) {
-        return new FirstPage();
+        return new FirstPage(data: this.profile);
       },
     ));
   }
@@ -97,6 +90,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     sub.onDone(() {
       sub.cancel();
+      _fetchJson();
     });
   }
 
@@ -108,5 +102,15 @@ class _SplashScreenState extends State<SplashScreen> {
     setState(() {
       remainingSec = duration.inSeconds;
     });
+  }
+
+  _fetchJson() async {
+    print('started fetching data');
+    String data = await DefaultAssetBundle.of(context)
+        .loadString("assets/json/lawal.oladipupo.json");
+
+    this.profile = json.decode(data);
+
+    _goToFirstPage();
   }
 }
