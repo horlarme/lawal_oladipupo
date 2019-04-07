@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lawal_oladipupo/config/Colors.dart';
 
-class Rating extends StatelessWidget {
+class Summary extends StatelessWidget {
   final int ratings;
 
-  Rating({Key key, this.ratings}) : super(key: key);
+  Summary({Key key, this.ratings}) : super(key: key);
 
   //create starts by the number of ratings provided
   getStars() {
