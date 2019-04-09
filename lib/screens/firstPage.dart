@@ -1,8 +1,11 @@
+import 'package:admob_flutter/admob_flutter.dart';
 import "package:flutter/material.dart";
 import "package:flutter/widgets.dart";
+import 'package:lawal_oladipupo/config/Colors.dart';
 import 'package:lawal_oladipupo/helpers/user.dart';
 import 'package:lawal_oladipupo/screens/TabViews/BasicProfileTabView.dart';
 import 'package:lawal_oladipupo/screens/TabViews/EducationTabView.dart';
+import 'package:lawal_oladipupo/screens/TabViews/ReviewsTab.dart';
 import 'package:lawal_oladipupo/screens/TabViews/SkillsTabView.dart';
 
 class FirstPage extends StatefulWidget {
@@ -14,12 +17,6 @@ class FirstPage extends StatefulWidget {
   _FirstPage createState() => new _FirstPage();
 }
 
-List<Tab> tabList = [
-  Tab(text: "Basic"),
-  Tab(text: "Education"),
-  Tab(text: "Tech Stack")
-];
-
 class _FirstPage extends State<FirstPage> with SingleTickerProviderStateMixin {
   TabController _tabController;
 
@@ -30,10 +27,20 @@ class _FirstPage extends State<FirstPage> with SingleTickerProviderStateMixin {
     _tabController = TabController(length: tabList.length, vsync: this);
   }
 
+  List<Tab> tabList = [
+    Tab(text: "Basic"),
+    Tab(text: "Education"),
+    Tab(text: "Work Experience"),
+    Tab(text: "Tech Stack"),
+    Tab(text: "Reviews"),
+  ];
+
   List<Widget> tabViews() => [
         BasicProfileTabView(user: widget.data),
         EducationTabView(user: widget.data),
-        SkillsTabView(user: widget.data)
+        EducationTabView(user: widget.data),
+        SkillsTabView(user: widget.data),
+        ReviewsTab(user: widget.data)
       ];
 
   @override
@@ -53,16 +60,18 @@ class _FirstPage extends State<FirstPage> with SingleTickerProviderStateMixin {
         controller: _tabController,
         children: tabViews().map((Widget view) => view).toList(),
       ),
+      bottomNavigationBar: AdmobBanner(
+        adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+        adSize: AdmobBannerSize.BANNER,
+      ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _goToContactPage,
-        child: Icon(Icons.contact_mail),
-        backgroundColor: Color.fromRGBO(144, 123, 73, 1),
-        tooltip: "Contact " + getFullName(widget.data),
+        child: Icon(Icons.menu),
+        elevation: 4,
+        foregroundColor: ascentColor,
+        onPressed: null,
+        backgroundColor: Colors.white,
+        tooltip: "Open Menu for " + getFullName(widget.data),
       ),
     );
-  }
-
-  void _goToContactPage() {
-    print("Going to contact page");
   }
 }

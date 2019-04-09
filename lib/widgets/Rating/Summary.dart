@@ -71,6 +71,7 @@ class Summary extends StatelessWidget {
                   print("onTap called.");
                 },
                 color: Colors.black,
+                splashColor: Colors.white,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[

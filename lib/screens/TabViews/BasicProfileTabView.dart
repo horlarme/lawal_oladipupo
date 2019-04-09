@@ -34,6 +34,7 @@ class _BasicProfileTabView extends State<BasicProfileTabView> {
           ),
         ),
         ProfileRow("Full Name", getFullName(widget.user)),
+        ProfileRow("E-Mail Address", (widget.user['email'])),
         ProfileRow("Spoken Languages", writeLanguages(widget.user)),
         ProfileRow("Date of Birth", writeDateOfBirth(widget.user)),
         ProfileRow(
